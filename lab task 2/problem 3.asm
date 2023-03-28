@@ -17,12 +17,13 @@ MAIN PROC
     
     ADDITION:
     MOV CL,2
-    MOV BL,3
-    ADD CL,BL
     SUB CL,48
+    MOV BL,3
+    MOV BL,48
+    ADD CL,BL
     
     MOV AH,2
-    MOV DL,AL
+    MOV DL,CL
     JMP EXIT
     
     SUBTRACTION:

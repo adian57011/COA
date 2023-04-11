@@ -1,0 +1,22 @@
+
+.MODEL SMALL
+
+.STACK 100H
+
+.DATA
+VALUE DB 04h
+
+.CODE
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV AL,VALUE
+    OR AL,00010100b
+    
+    MOV AH,4CH
+    XOR AL,AL
+    INT 21H
+    
+    MAIN ENDP
+END MAIN

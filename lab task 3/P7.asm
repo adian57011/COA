@@ -1,0 +1,30 @@
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+NUM DB 11010101B
+
+.CODE
+MAIN PROC
+    
+    
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV AH,2
+    MOV DL,NUM
+    ADD DL,30H
+    INT 21H
+    
+    SHR NUM,1
+    
+    MOV AH,2
+    MOV DL,NUM
+    ADD DL,30H
+    INT 21H
+    
+    
+    
+    EXIT:
+    MAIN ENDP
+END MAIN

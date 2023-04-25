@@ -1,0 +1,26 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+.CODE
+MAIN PROC
+    MOV BL,11010101B
+    
+    MOV AH,1
+    INT 21H
+    MOV CL,AL
+    SUB CL,30H
+    XOR CH,CH
+    
+    SHIFT_LOOP:
+    SHL BL,1
+    LOOP SHIFT_LOOP
+    
+    MOV AH,2
+    MOV DL,BL
+    INT 21H
+    
+    
+    EXIT:
+    MAIN ENDP
+END MAIN
